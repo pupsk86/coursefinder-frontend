@@ -90,6 +90,8 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
+    ],
+    "collectCoverage": false,
+    "collectCoverageFrom": ["**/*.{js,vue}", "!**/node_modules/**"]
   }
 }
