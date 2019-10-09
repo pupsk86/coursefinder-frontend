@@ -8,8 +8,13 @@
       <div class="filter-panel-container col-xs-4">
         <FilterPanel/>
       </div>
-      <div class="course-list-container col-xs-8">
-        d
+      <div class="course-card-list-container col-xs-8">
+        <CourseCardList/>
+      </div>
+      <div class="paginator-container col-xs-12">
+        <div class="fake-paginator" style="font-size: 14px; border-bottom: 1px solid rgba(0, 0, 0, 0.12);background-color: #fff;padding: 15px 10px 15px 10px;">
+          PAGINATOR
+        </div>
       </div>
     </div>
     <Footer/>
@@ -21,14 +26,15 @@ import Header from '@/components/common/Header.vue'
 import Footer from '@/components/common/Footer.vue'
 import ControlPanel from '@/components/main/ControlPanel.vue'
 import FilterPanel from '@/components/main/FilterPanel.vue'
+import CourseCardList from '@/components/main/CourseCardList.vue'
 
 export default {
-  name: 'MainPage',
   components: {
     Header,
     Footer,
     ControlPanel,
-    FilterPanel
+    FilterPanel,
+    CourseCardList
   }
 }
 </script>
@@ -36,18 +42,10 @@ export default {
 <style scoped lang="less">
     .control-panel-container {
       margin-top: 25px;
-      margin-bottom: 25px;
     }
-    .filter-panel-container {
-      width: 25%;
-      display: inline-block;
-      padding-right: 15px;
-      margin-bottom: 25px;
-    }
-    .course-list-container {
-      width: 75%;
-      display: inline-block;
-      padding-left: 15px;
+    .control-panel-container,
+    .filter-panel-container,
+    .paginator-container {
       margin-bottom: 25px;
     }
 </style>
