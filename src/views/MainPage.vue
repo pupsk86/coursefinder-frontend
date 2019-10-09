@@ -2,13 +2,13 @@
   <div>
     <Header/>
     <div class="container">
-      <div class="control-panel-container">
+      <div class="control-panel-container col-xs-12">
         <ControlPanel/>
       </div>
-      <div class="filter-panel-container">
+      <div class="filter-panel-container col-xs-4">
         <FilterPanel/>
       </div>
-      <div class="course-list-container">
+      <div class="course-list-container col-xs-8">
         d
       </div>
     </div>
@@ -34,20 +34,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-    .container {
-      margin-right: auto;
-      margin-left: auto;
-      min-height: 50vh;
-      @media (min-width: 768px) {
-        width: 750px;
-      }
-      @media (min-width: 992px) {
-        width: 970px;
-      }
-      @media (min-width: 1200px) {
-        width: 1170px;
-      }
-    }
     .control-panel-container {
       margin-top: 25px;
       margin-bottom: 25px;
