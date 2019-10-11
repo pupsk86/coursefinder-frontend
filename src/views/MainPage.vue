@@ -23,15 +23,15 @@ export default {
       <div class="control-panel-container col-xs-12">
         <ControlPanel/>
       </div>
-      <div class="filter-panel-container col-xs-4">
+      <div class="filter-panel-container col-xs-12 col-md-4">
         <FilterPanel/>
       </div>
-      <div class="course-card-list-container col-xs-8">
+      <div class="course-card-list-container col-xs-12 col-md-8">
         <CourseCardList/>
-      </div>
-      <div class="paginator-container col-xs-12">
-        <div class="fake-paginator" style="font-size: 14px; border-bottom: 1px solid rgba(0, 0, 0, 0.12);background-color: #fff;padding: 15px 10px 15px 10px;">
-          PAGINATOR
+        <div class="paginator-container">
+          <div class="fake-paginator" style="font-size: 14px; border-bottom: 1px solid rgba(0, 0, 0, 0.12);background-color: #fff;padding: 15px 10px 15px 10px;">
+            PAGINATOR
+          </div>
         </div>
       </div>
     </div>
@@ -40,12 +40,13 @@ export default {
 </template>
 
 <style scoped lang="less">
-    .control-panel-container {
+    .control-panel-container,
+    .paginator-container {
       margin-top: 25px;
     }
     .control-panel-container,
     .filter-panel-container,
-    .paginator-container {
+    .course-card-list-container {
       margin-bottom: 25px;
     }
 </style>

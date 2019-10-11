@@ -36,7 +36,7 @@
         width: 184px;
         float: left;
         height: 55px;
-        background-image: url(../../assets/logo.png);
+        background-image: url(../../assets/images/logo.png);
         background-size: 100%;
         background-repeat: no-repeat;
         background-position-y: -65px;

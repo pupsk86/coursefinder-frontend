@@ -1,10 +1,10 @@
 <template>
     <footer>
-        <div class="container">
-            <div class="copyright">
+        <div class="footer-container">
+            <div class="copyright col-xs-6">
                 © CourseFinder, 2019
             </div>
-            <div class="contacts">
+            <div class="contacts col-xs-6">
                 <a href="mailto:info@coursefinder.ru">info@coursefinder.ru</a>
             </div>
         </div>
@@ -12,22 +12,25 @@
 </template>
 
 <style scoped lang="less">
-    .container {
+    .footer-container {
         width: 100%;
         height: 65px;
         border: 0;
         border-radius: 0;
         border-top: 1px solid rgba(0, 0, 0, 0.12);
         background-color: #ffffff;
-
     }
-    .copyright {
-        margin: 25px 50px;
-        float: left;
+    .copyright,
+    .contacts {
+        
+        margin-top: 25px;
+        margin-bottom: 25px;
         font-size: .875rem;
     }
+    .copyright {
+        text-align: left;
+    }
     .contacts {
-        margin: 25px 50px;
-        float: right;
+        text-align: right;
     }
 </style>
