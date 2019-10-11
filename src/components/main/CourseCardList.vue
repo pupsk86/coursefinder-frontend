@@ -1,3 +1,13 @@
+<script>
+import CourseCard from '@/components/main/CourseCard.vue'
+
+export default {
+    components: {
+        CourseCard
+    }
+}
+</script>
+
 <template>
     <div class="course-card-list">
         <div class="course-card-container">
@@ -14,16 +24,6 @@
         </div>
     </div>
 </template>
-
-<script>
-import CourseCard from '@/components/main/CourseCard.vue'
-
-export default {
-    components: {
-        CourseCard
-    }
-}
-</script>
 
 <style scoped lang="less">
     .course-card-container:not(:last-child) {

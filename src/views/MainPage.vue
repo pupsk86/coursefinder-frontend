@@ -1,3 +1,21 @@
+<script>
+import Header from '@/components/common/Header.vue'
+import Footer from '@/components/common/Footer.vue'
+import ControlPanel from '@/components/main/ControlPanel.vue'
+import FilterPanel from '@/components/main/FilterPanel.vue'
+import CourseCardList from '@/components/main/CourseCardList.vue'
+
+export default {
+  components: {
+    Header,
+    Footer,
+    ControlPanel,
+    FilterPanel,
+    CourseCardList
+  }
+}
+</script>
+
 <template>
   <div>
     <Header/>
@@ -20,24 +38,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-import Header from '@/components/common/Header.vue'
-import Footer from '@/components/common/Footer.vue'
-import ControlPanel from '@/components/main/ControlPanel.vue'
-import FilterPanel from '@/components/main/FilterPanel.vue'
-import CourseCardList from '@/components/main/CourseCardList.vue'
-
-export default {
-  components: {
-    Header,
-    Footer,
-    ControlPanel,
-    FilterPanel,
-    CourseCardList
-  }
-}
-</script>
 
 <style scoped lang="less">
     .control-panel-container {
