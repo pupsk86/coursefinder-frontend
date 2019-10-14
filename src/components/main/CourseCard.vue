@@ -1,20 +1,58 @@
+<script>
+export default {
+    props: {
+        course: {
+            type: Object,
+            required: true
+        }
+    }
+}
+</script>
+
 <template>
     <div class="course-card container-fluid">
         <div class="row">
             <div class="col-xs-8">
-                <div class="course-logo course-logo-coursera"/>
-                COURSE INFO
+                <div class="course-site-logo course-site-logo-coursera"/>
+                <div class="course-card-title">
+                    {{ course.title }}
+                </div>
+                <div class="course-card-info">
+                    <div class="course-card-info-price">
+                        <img class="course-card-info-icon" src="@/assets/images/attach_money-18px.svg"/>
+                        {{ course.price }}
+                    </div>
+                    <div class="course-card-info-level">
+                        <img class="course-card-info-icon" src="@/assets/images/insert_chart-18px.svg"/>
+                        {{ course.level }}
+                    </div>
+                    <div class="course-card-info-lang">
+                        <img class="course-card-info-icon" src="@/assets/images/language-18px.svg"/>
+                        {{ course.lang }}
+                    </div>
+                </div>
             </div>
             <div class="col-xs-4">
-                <div class="course-card-photo-container">
-                     <img src="../../assets/images/partb_logo_square.jpeg"/>
+                <div class="course-card-logo-container">
+                     <img v-bind:src="course.logo"/>
+                </div>
+                <div class="course-card-rate">
+                    {{ course.rate }}
+                </div>
+                <div class="course-card-actions">
+                    <div class="course-card-action course-card-action-favourite">
+                        [F]
+                    </div>
+                    <div class="course-card-action course-card-action-compare">
+                        [C]
+                    </div>
                 </div>
             </div>
         </div>
         <hr/>
         <div class="row">
             <div class="col-xs-12">
-                COURSE DESCRIPTION
+                {{ course.description }}
             </div>
         </div>
     </div>
@@ -28,21 +66,36 @@
         text-align: left;
         padding: 15px 10px 15px 10px;
     }
-    .course-card-photo-container {
+    .course-card-logo-container {
         height: 132px;
         overflow: hidden;
     }
-    .course-card-photo {
-        height: 100%;
-        width: 100%;
-    }
-    .course-logo {
+    .course-site-logo {
         height: 20px;
         width: 90px;
         background-size: 100% 100%;
         background-repeat: no-repeat;
     }
-    .course-logo-coursera {
+    .course-site-logo-coursera {
         background-image: url(../../assets/images/coursera-logo.svg);
+    }
+    .course-card-rate {
+        float: left;
+    }
+    .course-card-actions {
+        float: right;
+    }
+    .course-card-action {
+        display: inline-block;
+    }
+    .course-card-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .course-card-info-icon {
+        vertical-align: middle;
+    }
+    .course-card-info {
+        margin-top: 5px;
     }
 </style>

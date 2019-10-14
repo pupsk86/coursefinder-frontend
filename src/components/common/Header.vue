@@ -2,9 +2,9 @@
     <header>
         <div class="container">
             <div class="logo"/>
-            <CompareButton/>
-            <FavouriteButton/>
-            <LoginButton/>
+            <compare-button/>
+            <favourite-button/>
+            <login-button/>
         </div>
     </header>
 </template>

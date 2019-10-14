@@ -21,13 +21,13 @@ export default {
     <Header/>
     <div class="container">
       <div class="control-panel-container col-xs-12">
-        <ControlPanel/>
+        <control-panel/>
       </div>
       <div class="filter-panel-container col-xs-12 col-md-4">
-        <FilterPanel/>
+        <filter-panel/>
       </div>
       <div class="course-card-list-container col-xs-12 col-md-8">
-        <CourseCardList/>
+        <course-card-list/>
         <div class="paginator-container">
           <div class="fake-paginator" style="font-size: 14px; border-bottom: 1px solid rgba(0, 0, 0, 0.12);background-color: #fff;padding: 15px 10px 15px 10px;">
             PAGINATOR
