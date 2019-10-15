@@ -2,14 +2,21 @@
     <header>
         <div class="container">
             <div class="logo"/>
-            <compare-button/>
-            <favourite-button/>
-            <login-button/>
+            <button-compare totalCount="5" />
+            <button-favourite/>
+            <button-login/>
         </div>
     </header>
 </template>
 
 <script>
+import ButtonCompare from '@/components/common/ButtonCompare.vue'
+
+export default {
+    components: {
+        ButtonCompare
+    }
+}
 //TODO: add CompareButton component
 //TODO: add FavouriteButton component
 //TODO: add LoginButton component
