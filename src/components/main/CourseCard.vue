@@ -1,5 +1,6 @@
 <script>
 import ButtonToCompare from '@/components/common/ButtonToCompare.vue'
+import ButtonToFavourite from '@/components/common/ButtonToFavourite.vue'
 
 export default {
     props: {
@@ -9,7 +10,8 @@ export default {
         }
     },
     components: {
-        ButtonToCompare
+        ButtonToCompare,
+        ButtonToFavourite
     }
 }
 </script>
@@ -46,7 +48,10 @@ export default {
                 </div>
                 <div class="course-card-actions">
                     <div class="course-card-action course-card-action-favourite">
-                        [F]
+                        <button-to-favourite
+                            v-bind:active="course.isInFavouriteList"
+                            v-on:click="$emit('update:course:isInFavouriteList', !course.isInFavouriteList)"
+                        />
                     </div>
                     <div class="course-card-action course-card-action-compare">
                         <button-to-compare
