@@ -1,10 +1,15 @@
 <script>
+import ButtonToCompare from '@/components/common/ButtonToCompare.vue'
+
 export default {
     props: {
         course: {
             type: Object,
             required: true
         }
+    },
+    components: {
+        ButtonToCompare
     }
 }
 </script>
@@ -44,7 +49,10 @@ export default {
                         [F]
                     </div>
                     <div class="course-card-action course-card-action-compare">
-                        [C]
+                        <button-to-compare
+                            v-bind:active="course.isInCompareList"
+                            v-on:click="$emit('update:course:isInCompareList', !course.isInCompareList)"
+                        />
                     </div>
                 </div>
             </div>
