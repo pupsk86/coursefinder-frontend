@@ -1,6 +1,6 @@
 <script>
-import ButtonToCompare from '@/components/common/ButtonToCompare.vue'
-import ButtonToFavourite from '@/components/common/ButtonToFavourite.vue'
+import CourseCardActionCompare from '@/components/main/CourseCardActionCompare.vue'
+import CourseCardActionFavourite from '@/components/main/CourseCardActionFavourite.vue'
 
 export default {
     props: {
@@ -10,8 +10,8 @@ export default {
         }
     },
     components: {
-        ButtonToCompare,
-        ButtonToFavourite
+        CourseCardActionCompare,
+        CourseCardActionFavourite
     }
 }
 </script>
@@ -48,13 +48,13 @@ export default {
                 </div>
                 <div class="course-card-actions">
                     <div class="course-card-action course-card-action-favourite">
-                        <button-to-favourite
+                        <course-card-action-favourite
                             v-bind:active="course.isInFavouriteList"
                             v-on:click="$emit('update:course:isInFavouriteList', !course.isInFavouriteList)"
                         />
                     </div>
                     <div class="course-card-action course-card-action-compare">
-                        <button-to-compare
+                        <course-card-action-compare
                             v-bind:active="course.isInCompareList"
                             v-on:click="$emit('update:course:isInCompareList', !course.isInCompareList)"
                         />
