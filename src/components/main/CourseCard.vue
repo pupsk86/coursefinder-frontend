@@ -1,4 +1,5 @@
 <script>
+import { mapActions } from 'vuex'
 import CourseCardActionCompare from '@/components/main/CourseCardActionCompare.vue'
 import CourseCardActionFavourite from '@/components/main/CourseCardActionFavourite.vue'
 
@@ -12,6 +13,12 @@ export default {
     components: {
         CourseCardActionCompare,
         CourseCardActionFavourite
+    },
+    methods: {
+        ...mapActions([
+            'toggleCourseIsInFavouriteList',
+            'toggleCourseIsInCompareList',
+        ])
     }
 }
 </script>
@@ -50,13 +57,13 @@ export default {
                     <div class="course-card-action course-card-action-favourite">
                         <course-card-action-favourite
                             v-bind:active="course.isInFavouriteList"
-                            v-on:click="$emit('update:course:isInFavouriteList', !course.isInFavouriteList)"
+                            v-on:click="toggleCourseIsInFavouriteList(course)"
                         />
                     </div>
                     <div class="course-card-action course-card-action-compare">
                         <course-card-action-compare
                             v-bind:active="course.isInCompareList"
-                            v-on:click="$emit('update:course:isInCompareList', !course.isInCompareList)"
+                            v-on:click="toggleCourseIsInCompareList(course)"
                         />
                     </div>
                 </div>

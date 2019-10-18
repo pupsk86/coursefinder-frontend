@@ -3,8 +3,8 @@
         <div class="container">
             <div class="logo"/>
             <button-compare totalCount="5" />
-            <button-favourite/>
-            <button-login/>
+            <!--button-favourite/>
+            <button-login/-->
         </div>
     </header>
 </template>
