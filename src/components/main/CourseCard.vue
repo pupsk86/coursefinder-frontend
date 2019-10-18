@@ -1,7 +1,7 @@
 <script>
 import { mapActions } from 'vuex'
-import CourseCardActionCompare from '@/components/main/CourseCardActionCompare.vue'
-import CourseCardActionFavourite from '@/components/main/CourseCardActionFavourite.vue'
+import CourseCompareAction from '@/components/main/CourseCompareAction.vue'
+import CourseFavouriteAction from '@/components/main/CourseFavouriteAction.vue'
 
 export default {
     props: {
@@ -11,8 +11,8 @@ export default {
         }
     },
     components: {
-        CourseCardActionCompare,
-        CourseCardActionFavourite
+        CourseCompareAction,
+        CourseFavouriteAction
     },
     methods: {
         ...mapActions([
@@ -55,13 +55,13 @@ export default {
                 </div>
                 <div class="course-card-actions">
                     <div class="course-card-action course-card-action-favourite">
-                        <course-card-action-favourite
+                        <course-favourite-action
                             v-bind:active="course.isInFavouriteList"
                             v-on:click="toggleCourseIsInFavouriteList(course)"
                         />
                     </div>
                     <div class="course-card-action course-card-action-compare">
-                        <course-card-action-compare
+                        <course-compare-action
                             v-bind:active="course.isInCompareList"
                             v-on:click="toggleCourseIsInCompareList(course)"
                         />
