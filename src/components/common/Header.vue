@@ -1,8 +1,8 @@
 <template>
     <header>
         <div class="container">
-            <div class="logo"/>
-            <button-compare totalCount="5" />
+            <router-link to="/" class="logo"/>
+            <button-compare v-bind:totalCount="5" />
             <!--button-favourite/>
             <button-login/-->
         </div>

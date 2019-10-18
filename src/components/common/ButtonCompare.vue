@@ -11,11 +11,11 @@ export default {
 
 <template>
     <div class="btn-compare-container">
-        <a class="btn-compare-link" href="">
+        <router-link to="/compare" class="btn-compare-link">
             <img data-v-588c24be="" src="@/assets/images/compare-24px.svg" class="course-card-info-icon">
             <span class="btn-compare-link__lbl">Сравнение</span>
             <span class="btn-compare-link__badge">{{ totalCount }}</span>
-        </a>
+        </router-link>
     </div>
 </template>
 
