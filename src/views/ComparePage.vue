@@ -2,12 +2,14 @@
 import Header from '@/components/common/Header.vue'
 import Footer from '@/components/common/Footer.vue'
 import ControlPanel from '@/components/compare/ControlPanel.vue'
+import CourseCompareTable from '@/components/compare/CourseCompareTable.vue'
 
 export default {
   components: {
     Header,
     Footer,
-    ControlPanel
+    ControlPanel,
+    CourseCompareTable
   }
 }
 </script>
@@ -21,9 +23,7 @@ export default {
           <control-panel/>
       </div>
       <div class="compare-table-container col-xs-12">
-          <div class="fake-compare-table" style="background-color: rgb(194, 211, 240); height: 670px;">
-            COMPARE_TABLE_PLACEHOLDER
-          </div>
+          <course-compare-table/>
       </div>
     </div>
     <Footer/>
