@@ -1,11 +1,15 @@
 <script>
 import Header from '@/components/common/Header.vue'
 import Footer from '@/components/common/Footer.vue'
+import ControlPanel from '@/components/compare/ControlPanel.vue'
+import CourseCompareTable from '@/components/compare/CourseCompareTable.vue'
 
 export default {
   components: {
     Header,
-    Footer
+    Footer,
+    ControlPanel,
+    CourseCompareTable
   }
 }
 </script>
@@ -16,14 +20,10 @@ export default {
     <div class="container">
       <h1>Сравнение курсов</h1>
       <div class="control-panel-container col-xs-12">
-          <div class="fake-control-panel" style="background-color: rgb(253, 193, 193); height: 50px;">
-            CONTROL_PANEL_PLACEHOLDER
-          </div>
+          <control-panel/>
       </div>
       <div class="compare-table-container col-xs-12">
-          <div class="fake-compare-table" style="background-color: rgb(194, 211, 240); height: 670px;">
-            COMPARE_TABLE_PLACEHOLDER
-          </div>
+          <course-compare-table/>
       </div>
     </div>
     <Footer/>
