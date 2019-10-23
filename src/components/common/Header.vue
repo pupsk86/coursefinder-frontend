@@ -1,20 +1,9 @@
-<template>
-    <header>
-        <div class="container">
-            <router-link to="/" class="logo"/>
-            <button-compare v-bind:totalCount="5" />
-            <!--button-favourite/>
-            <button-login/-->
-        </div>
-    </header>
-</template>
-
 <script>
-import ButtonCompare from '@/components/common/ButtonCompare.vue'
+import HeaderButtons from '@/components/common/HeaderButtons.vue'
 
 export default {
     components: {
-        ButtonCompare
+        HeaderButtons
     }
 }
 //TODO: add CompareButton component
@@ -22,11 +11,20 @@ export default {
 //TODO: add LoginButton component
 </script>
 
+<template>
+    <header>
+        <div class="header-container">
+            <router-link to="/" class="logo"/>
+            <header-buttons class="header-buttons"/>
+        </div>
+    </header>
+</template>
+
 <style scoped lang="less">
     header {
         height: 65px;
     }
-    .container {
+    .header-container {
         position: fixed;
         width: 100%;
         left: 0px;
@@ -47,5 +45,9 @@ export default {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position-y: -65px;
+    }
+    .header-buttons {
+        margin: 25px 50px;
+        float: right;
     }
 </style>
