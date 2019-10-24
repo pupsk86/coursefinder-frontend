@@ -1,10 +1,11 @@
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-    props: {
-        totalCount: {
-            type: Number,
-            required: true
-        }
+    computed: {
+        ...mapGetters({
+            compareTotalCnt: "getCntCoursesInCompare"
+        })
     }
 }
 </script>
@@ -21,7 +22,7 @@ export default {
             <path fill="none" d="M0 0h24v24H0V0z"/>
             <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/>
         </svg>
-        <span class="btn-compare-link__badge">{{ totalCount }}</span>
+        <span class="btn-compare-link__badge" v-if="compareTotalCnt > 0">{{ compareTotalCnt }}</span>
         <span class="btn-compare-link__lbl">Сравнение</span>
     </router-link>
 </template>

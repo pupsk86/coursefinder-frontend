@@ -14,8 +14,8 @@ export default {
 
 <template>
     <div>
-        <compare-button v-bind:totalCount="5"/>
-        <favorite-button v-bind:totalCount="2"/>
+        <compare-button/>
+        <favorite-button/>
         <sign-in-button/>
     </div>
 </template>
