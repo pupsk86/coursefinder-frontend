@@ -29,8 +29,28 @@ export default {
 <style scoped lang="less">
     .btn-compare-link {
         margin: 0 15px 0 0;
+        text-decoration: none;
+        color: #333;
+        position: relative;
+        &:hover {
+            color: #514efa
+        }
     }
     .btn-compare-link__icon {
-        margin: 0 5px 0 0;
+        margin: 0 5px -5px 0;
+        fill: rgb(126, 126, 126);
+    }
+    .btn-compare-link__badge {
+        border-radius: 13px;
+        height: 15px;
+        width: 15px;
+        left: 13px;
+        top: -10px;
+        background-image: linear-gradient(to bottom, #e1e0f0, #514efa);
+        color: #fff;
+        font-size: 12px;
+        font-weight: bolder;
+        padding-top: 1px;
+        position: absolute;
     }
 </style>
