@@ -1,9 +1,11 @@
 <script>
+import { mapGetters } from "vuex"
+
 export default {
     computed: {
-        courses () {
-            return this.$store.state.courses
-        }
+        ...mapGetters({
+            coursesInCompare: "getCoursesInCompare"
+        })
     },
     data: () => ({
         courseCompareProps: [
@@ -21,7 +23,7 @@ export default {
     <table class="course-compare-table">
         <tbody>
             <tr v-for="courseCompareProp in courseCompareProps" v-bind:key="courseCompareProp">
-                <td class="course-compare-table-cell" v-for="course in courses" v-bind:key="course.id">
+                <td class="course-compare-table-cell" v-for="course in coursesInCompare" v-bind:key="course.id">
                     {{ course[courseCompareProp] }}
                 </td>
             </tr>
