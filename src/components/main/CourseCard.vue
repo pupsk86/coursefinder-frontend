@@ -1,5 +1,4 @@
 <script>
-import { mapActions } from 'vuex'
 import CourseCompareAction from '@/components/main/CourseCompareAction.vue'
 import CourseFavouriteAction from '@/components/main/CourseFavouriteAction.vue'
 
@@ -15,11 +14,21 @@ export default {
         CourseFavouriteAction
     },
     methods: {
-        ...mapActions([
-            'toggleCourseIsInFavouriteList',
-            'toggleCourseIsInCompareList',
-        ])
-    }
+        toggleCourseIsInFavouriteList () {
+            this.$store.dispatch('toggleCourseIsInFavouriteList', this.course)
+        },
+        toggleCourseIsInCompareList () {
+            this.$store.dispatch('toggleCourseIsInCompareList', this.course)
+        }
+    },
+    computed: {
+        isCourseFavourite () {
+            return this.$store.getters.isCourseFavourite(this.course)
+        },
+        isCourseComparative () {
+            return this.$store.getters.isCourseComparative(this.course)
+        }
+    },
 }
 </script>
 
@@ -56,14 +65,14 @@ export default {
                 <div class="course-card-actions">
                     <div class="course-card-action course-card-action-favourite">
                         <course-favourite-action
-                            v-bind:active="course.isInFavouriteList"
-                            v-on:click="toggleCourseIsInFavouriteList(course)"
+                            v-bind:active="isCourseFavourite"
+                            v-on:click="toggleCourseIsInFavouriteList"
                         />
                     </div>
                     <div class="course-card-action course-card-action-compare">
                         <course-compare-action
-                            v-bind:active="course.isInCompareList"
-                            v-on:click="toggleCourseIsInCompareList(course)"
+                            v-bind:active="isCourseComparative"
+                            v-on:click="toggleCourseIsInCompareList"
                         />
                     </div>
                 </div>

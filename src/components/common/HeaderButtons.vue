@@ -1,12 +1,12 @@
 <script>
 import CompareButton from '@/components/common/CompareButton.vue'
-import FavoriteButton from '@/components/common/FavoriteButton.vue'
+import FavouriteButton from '@/components/common/FavouriteButton.vue'
 import SignInButton from '@/components/common/SignInButton.vue'
 
 export default {
     components: {
         CompareButton,
-        FavoriteButton,
+        FavouriteButton,
         SignInButton
     }
 }
@@ -15,7 +15,7 @@ export default {
 <template>
     <div>
         <compare-button/>
-        <favorite-button/>
+        <favourite-button/>
         <sign-in-button/>
     </div>
 </template>
