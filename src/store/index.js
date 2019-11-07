@@ -48,6 +48,9 @@ const actions = {
     } else {
       commit(ADD_COURSE_TO_COMPARATIVE, course)
     }
+  },
+  removeCourseFromCompareList ({ commit }, course) {
+    commit(DELETE_COURSE_FROM_COMPARATIVE, course)
   }
 }
 
