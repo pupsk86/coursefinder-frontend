@@ -1,6 +1,7 @@
 <script>
 import CourseCompareAction from '@/components/main/CourseCompareAction.vue'
 import CourseFavouriteAction from '@/components/main/CourseFavouriteAction.vue'
+import { TOGGLE_COURSE_IS_IN_FAVOURITE_LIST, TOGGLE_COURSE_IS_IN_COMPARE_LIST } from '@/store/action-types'
 
 export default {
     props: {
@@ -15,10 +16,10 @@ export default {
     },
     methods: {
         toggleCourseIsInFavouriteList () {
-            this.$store.dispatch('toggleCourseIsInFavouriteList', this.course)
+            this.$store.dispatch(TOGGLE_COURSE_IS_IN_FAVOURITE_LIST, this.course)
         },
         toggleCourseIsInCompareList () {
-            this.$store.dispatch('toggleCourseIsInCompareList', this.course)
+            this.$store.dispatch(TOGGLE_COURSE_IS_IN_COMPARE_LIST, this.course)
         }
     },
     computed: {

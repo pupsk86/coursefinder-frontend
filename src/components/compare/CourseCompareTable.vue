@@ -2,6 +2,7 @@
 import { mapGetters } from "vuex"
 import CourseFavouriteAction from '@/components/main/CourseFavouriteAction.vue'
 import CourseRemoveAction from '@/components/compare/CourseRemoveAction.vue'
+import { TOGGLE_COURSE_IS_IN_FAVOURITE_LIST, REMOVE_COURSE_FROM_COMPARE_LIST } from '@/store/action-types'
 
 export default {
     components: {
@@ -11,7 +12,15 @@ export default {
     computed: {
         ...mapGetters({
             comparativeCourses: "getComparativeCourses"
-        }),
+        })
+    },
+    methods: {
+        onCourseFavouriteAction (course) {
+            this.$store.dispatch(TOGGLE_COURSE_IS_IN_FAVOURITE_LIST, course)
+        },
+        onCourseRemoveAction (course) {
+            this.$store.dispatch(REMOVE_COURSE_FROM_COMPARE_LIST, course)
+        },
     },
     data: () => ({
         courseCompareProps: [
@@ -36,10 +45,10 @@ export default {
                         <div class="course-compare-actions">
                             <course-favourite-action
                                 v-bind:active="$store.getters.isCourseFavourite(course)"
-                                v-on:click="$store.dispatch('toggleCourseIsInFavouriteList', course)"
+                                v-on:click="onCourseFavouriteAction(course)"
                             />
                             <course-remove-action
-                                v-on:click="$store.dispatch('removeCourseFromCompareList', course)"
+                                v-on:click="onCourseRemoveAction(course)"
                             />
                         </div>
                     </div>

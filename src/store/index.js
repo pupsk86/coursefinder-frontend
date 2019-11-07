@@ -1,10 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
-const ADD_COURSE_TO_FAVOURITE = 'ADD_COURSE_TO_FAVOURITE'
-const DELETE_COURSE_FROM_FAVOURITE = 'DELETE_COURSE_FROM_FAVOURITE'
-const ADD_COURSE_TO_COMPARATIVE = 'ADD_COURSE_TO_COMPARATIVE'
-const DELETE_COURSE_FROM_COMPARATIVE = 'DELETE_COURSE_FROM_COMPARATIVE'
+import { ADD_COURSE_TO_FAVOURITE, DELETE_COURSE_FROM_FAVOURITE, ADD_COURSE_TO_COMPARATIVE, DELETE_COURSE_FROM_COMPARATIVE } from './mutation-types'
+import { TOGGLE_COURSE_IS_IN_FAVOURITE_LIST, TOGGLE_COURSE_IS_IN_COMPARE_LIST, REMOVE_COURSE_FROM_COMPARE_LIST } from './action-types'
 
 Vue.use(Vuex)
 
@@ -35,21 +32,21 @@ const mutations = {
 }
 
 const actions = {
-  toggleCourseIsInFavouriteList ({ commit, getters }, course) {
+  [TOGGLE_COURSE_IS_IN_FAVOURITE_LIST] ({ commit, getters }, course) {
     if (getters.isCourseFavourite(course)) {
       commit(DELETE_COURSE_FROM_FAVOURITE, course)
     } else {
       commit(ADD_COURSE_TO_FAVOURITE, course)
     }
   },
-  toggleCourseIsInCompareList ({ commit, getters }, course) {
+  [TOGGLE_COURSE_IS_IN_COMPARE_LIST] ({ commit, getters }, course) {
     if (getters.isCourseComparative(course)) {
       commit(DELETE_COURSE_FROM_COMPARATIVE, course)
     } else {
       commit(ADD_COURSE_TO_COMPARATIVE, course)
     }
   },
-  removeCourseFromCompareList ({ commit }, course) {
+  [REMOVE_COURSE_FROM_COMPARE_LIST] ({ commit }, course) {
     commit(DELETE_COURSE_FROM_COMPARATIVE, course)
   }
 }
